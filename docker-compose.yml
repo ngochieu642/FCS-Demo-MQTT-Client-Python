@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  paho-mqtt-client-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: paho_mqtt_client_demo
+    env_file:
+      - .env.dev
+    volumes:
+      - ${PWD}:/code
+      - .vscode-server:/root/.vscode-server
+    command: "tail -f /dev/null"
+    networks:
+      - dev-network
+
+networks:
+  dev-network:
+    external:
+      name: fcs-network
