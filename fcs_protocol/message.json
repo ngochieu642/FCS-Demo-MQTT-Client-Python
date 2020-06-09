@@ -1,0 +1,10 @@
+{
+  "message_type": null,
+  "message_name": null,
+  "message_content": {
+    "message_id": null,
+    "jwt": null,
+    "topic": null,
+    "client_id": null
+  }
+}
