@@ -5,6 +5,7 @@ import uuid
 import paho.mqtt.client as mqtt
 import json
 
+
 def on_connect(client, userdata, flags, rc):
     print('Connected with result code: ' + str(rc))
 
@@ -14,6 +15,7 @@ def on_connect(client, userdata, flags, rc):
     ret, mid = client.publish(socket_topic_id, payload=json.dumps(transfer_msg), qos=0, retain=False, properties=None)
     print(f'Return message: {ret}')
 
+
 def on_message(client, userdata, msg):
     print(f'client: {client}')
     print(f'userdata: {userdata}')
@@ -22,6 +24,7 @@ def on_message(client, userdata, msg):
 
 def on_disconnect(client, userdata, msg):
     print(client, userdata, msg)
+
 
 if __name__ == "__main__":
     # Create buffer
